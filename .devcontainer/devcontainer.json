@@ -1,0 +1,26 @@
+{
+  "name": "Elixir",
+  "image": "elixir",
+  "features": {
+    "ghcr.io/meaningful-ooo/devcontainer-features/homebrew:2": []
+  },
+  // Configure tool-specific properties.
+  // "customizations": {
+  //   // Configure properties specific to VS Code.
+  //   "vscode": {
+  //     // Set *default* container specific settings.json values on container create.
+  //     "settings": {
+  //       "haskell.manageHLS": "GHCup"
+  //     },
+  //     // Add the IDs of extensions you want installed when the container is created.
+  //     "extensions": [
+  //         "haskell.haskell",
+  //         "hoovercj.haskell-linter"
+  //     ]
+  //   }
+  // },
+  // "postCreateCommand": "ghcup upgrade && cabal update && cabal install hlint stylish-haskell hasktags hasktags hoogle",
+  // Comment out to connect as root instead. To add a non-root user, see: https://aka.ms/vscode-remote/containers/non-root.
+  //"remoteUser": "vscode",
+  "postCreateCommand": "bash ./.config/setup_env.sh"
+}
