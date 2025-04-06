@@ -1,8 +1,8 @@
 #!/bin/bash
 
-sudo apt update
-sudo apt dist-upgrade -y
-sudo apt install -y --no-install-recommends \
+apt update
+apt dist-upgrade -y
+apt install -y --no-install-recommends \
   build-essential \
   git \
   sudo \
@@ -13,6 +13,9 @@ sudo apt install -y --no-install-recommends \
   ca-certificates \
   unzip  \
   luarocks \
+  sudo
+
+/bin/bash -c "NONINTERACTIVE=1 $(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 export XDG_CONFIG_HOME="$HOME"/.config
 mkdir -p "$XDG_CONFIG_HOME"
