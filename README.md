@@ -20,5 +20,5 @@ bash -c '.config/setup_env.sh'
 Now exit container with *Ctrl-D* and you can enter container again with
 
 ```sh
-podman exec -it /usr/bin/zsh
+podman exec elixir-tutorial -it /usr/bin/zsh
 ```
