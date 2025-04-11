@@ -1,24 +1,18 @@
-# Starting container
+# Setting up environment
+
+Clone repository to selected directory.
+
+## Starting container
 
 Assuming dockerhub is confiugred as default container source:
 
 ```sh
-podman run --replace -dit --name 'elixir-tutorial' elixir '/bin/bash'
-podman exec -it /bin/bash
+podman run --replace -dit --name 'elixir-tutorial' -v ./:workspace/elixir-tutorial elixir:latest '/bin/bash'
+podman exec -it -w='/workspace/elixir-tutorial' elixir-tutorial "/workspace/elixir-tutorial/.config/setup_env.sh"
 ```
 
-This should put you into bash inside *elixir* container. You should then clone this repo and run `.config/setup_env.sh` script that will set up environment.
+# Entering container
 
 ```sh
-mkdir workspace
-cd workspace
-git clone https://github.com/radoslawg/elixir-tutorial.git
-cd elixir-tutorial
-bash -c '.config/setup_env.sh'
-```
-
-Now exit container with *Ctrl-D* and you can enter container again with
-
-```sh
-podman exec elixir-tutorial -it /usr/bin/zsh
+podman exec -it elixir-tutorial '/usr/bin/zsh'
 ```
